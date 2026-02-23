@@ -1,0 +1,7 @@
+<h2>{{ task.title }}</h2>
+
+<p>{{ task.description }}</p>
+<p>Status: {{ task.status }}</p>
+<p>Deadline: {{ task.deadline }}</p>
+
+<a href="{% url 'update_status' task.id %}">Update Status</a>

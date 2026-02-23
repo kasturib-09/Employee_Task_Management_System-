@@ -1,0 +1,66 @@
+{% extends 'tasks/base.html' %}
+
+{% block content %}
+
+<h3>Analytics Dashboard</h3>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="card p-3 shadow">
+            <h5>Status Chart</h5>
+            <canvas id="statusChart"></canvas>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card p-3 shadow">
+            <h5>Priority Chart</h5>
+            <canvas id="priorityChart"></canvas>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+let statusLabels = [];
+let statusCounts = [];
+
+{% for item in status_data %}
+    statusLabels.push("{{ item.status }}");
+    statusCounts.push({{ item.count }});
+{% endfor %}
+
+new Chart(document.getElementById('statusChart'), {
+    type: 'pie',
+    data: {
+        labels: statusLabels,
+        datasets: [{
+            data: statusCounts
+        }]
+    }
+});
+
+
+let priorityLabels = [];
+let priorityCounts = [];
+
+{% for item in priority_data %}
+    priorityLabels.push("{{ item.priority }}");
+    priorityCounts.push({{ item.count }});
+{% endfor %}
+
+new Chart(document.getElementById('priorityChart'), {
+    type: 'bar',
+    data: {
+        labels: priorityLabels,
+        datasets: [{
+            data: priorityCounts
+        }]
+    }
+});
+</script>
+
+{% endblock %}
