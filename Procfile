@@ -1,1 +1,1 @@
-web: gunicorn emp_project.wsgi
+web: gunicorn taskmanager.wsgi
