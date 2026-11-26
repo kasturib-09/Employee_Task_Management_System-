@@ -86,8 +86,6 @@ The project uses **SQLite** and **Django ORM** for database operations.
 - Email notifications for new task assignments.
 - Employee performance analytics.
 - Task comments and attachments.
-- REST API integration.
-- React-based frontend.
 - Advanced role and permission management.
 
 ## 🎯 Project Objective
