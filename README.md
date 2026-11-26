@@ -36,6 +36,7 @@ The system helps reduce manual work, improve task organization, and make employe
 | SQLite | Database |
 | Git & GitHub | Version control and project hosting |
 
+
 ## 👥 User Roles
 
 ### Admin
